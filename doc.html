@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HideLinkFX</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="hidelinkfx-100">HideLinkFX 1.0.0</h1>
+
+<p><div class="toc">
+<ul>
+<li><a href="#hidelinkfx-100">HideLinkFX 1.0.0</a><ul>
+<li><a href="#содержимое-поставки">Содержимое поставки</a></li>
+<li><a href="#установка-системы">Установка системы</a><ul>
+<li><a href="#установка-на-сайт-с-поддержкой-php">Установка на сайт с поддержкой PHP</a></li>
+<li><a href="#установка-на-сайт-без-поддержки-php-статический-сайт">Установка на сайт без поддержки PHP (статический сайт)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</p>
+
+<h2 id="содержимое-поставки">Содержимое поставки</h2>
+
+<p>После покупки у вас на руках оказывается zip-архив, содержащий 5 файлов. Имена файлов полностью случайны, т.е. никто не сможет обнаружить использование нашей системы на вашем сайте даже с помощью специализированных поисковиков по исходному коду страниц.</p>
+
+<p>В качестве примера приведу список файлов пакета, который работает на нашем демо-сайте.</p>
+
+<dl>
+<dt>CIlRLXCxjpo.js</dt>
+<dd>Размер: 92725 байт
+
+<blockquote>
+  содержит логику для подключения SWF и базовую систему фильтрации браузеров
+</blockquote></dd>
+
+<dt>demo.php</dt>
+<dd>Размер: 417 байт
+
+<blockquote>
+  представляет собой пример использования функционала системы на сайте с поддержкой PHP
+</blockquote></dd>
+
+<dt>HnsujPeUiJQL.swf</dt>
+<dd>Размер: 29300 байт
+
+<blockquote>
+  SWF файл в котором находится система перенаправления и фильтрации браузеров пользователей
+</blockquote></dd>
+
+<dt>oPIUCQGt.php</dt>
+<dd>Размер: 429 байт
+
+<blockquote>
+  библиотека, предоставляющая доступ к функции шифрования ссылко, передаваемых в SWF файл
+</blockquote></dd>
+
+<dt>zNVDDxUxLOMmp.swf</dt>
+<dd>Размер: 773 байта
+
+<blockquote>
+  сервисный файл без которого подключение SWF может не сработать
+</blockquote></dd>
+</dl>
+
+
+
+<h2 id="установка-системы">Установка системы</h2>
+
+<p>Система может работать как на динамических сайтах (с поддержкой PHP), так и на статических (чистый HTML без дополнительных возможностей). Рассмотрим оба варианта.</p>
+
+<p>При подключении я буду использовать имена файлов из раздела <em>Содержимое поставки</em>. Имена файлов вашей поставки будут другими. Точные имена файлов вы найдете в файле <em>demo.php</em>.</p>
+
+<p>В примерах описана работа со страницей</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Test<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://ya.ru"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"download-button"</span>&gt;</span>Скачать!<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+
+
+<h3 id="установка-на-сайт-с-поддержкой-php">Установка на сайт с поддержкой PHP</h3>
+
+<p>Распаковку файлов требуется производить в корневую директорию вашего сайта. Если в вашем проекте существуюе какие-то специфические требования к путям размещения статических файлов, обратитесь к нам для перекомпиляции кода в соответствии с ними. </p>
+
+<blockquote>
+  <p><strong>Не следует выгружать на сайт файл demo.php!</strong></p>
+</blockquote>
+
+<p>Для подключения клиентских библиотек требуется добавить в конец вывода HTML (перед закрывающим тегом <code>&lt;body&gt;</code>) следующий код:</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"CIlRLXCxjpo.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p>Результатом будет</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Test<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://ya.ru"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"download-button"</span>&gt;</span>Скачать!<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"CIlRLXCxjpo.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p>Для замены ссылки элемента с ID <code>download-button</code> нужно добавить следующий код после подключения клиентских библиотек</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span>&gt;</span><span class="javascript">JRYiRmyEZd(<span class="hljs-string">'#download-button'</span>, <span class="hljs-string">'&lt;?php require '</span>oPIUCQGt.php<span class="hljs-string">'; echo encode("http://domain.com/file.exe"); ?&gt;'</span>)</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p>Результатом будет</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Test<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://ya.ru"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"download-button"</span>&gt;</span>Скачать!<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"CIlRLXCxjpo.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span>&gt;</span><span class="javascript">JRYiRmyEZd(<span class="hljs-string">'#download-button'</span>, <span class="hljs-string">'&lt;?php require '</span>oPIUCQGt.php<span class="hljs-string">'; echo encode("http://domain.com/file.exe"); ?&gt;'</span>)</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p>Если вы хотите ограничить скрытие ссылок (полное отключение системы) для каких-то браузеров,  вам нужно добавить второй параметр с массивом <code>User-Agent</code> при вызове функции <code>encode</code>. Например, вызов функции, генерирующей код для отмены сокрытия для Яндекс.Браузера и Mail.ru Amigo выглядит так:</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs scss">    <span class="hljs-function">encode(<span class="hljs-string">"http://domain.com/file.exe"</span>, <span class="hljs-function">array(<span class="hljs-string">'yabrowser'</span>, <span class="hljs-string">'mrchrome'</span>)</span>)</span>;</code></pre>
+
+
+
+<h3 id="установка-на-сайт-без-поддержки-php-статический-сайт">Установка на сайт без поддержки PHP (статический сайт)</h3>
+
+<p>Распаковку файлов требуется производить в корневую директорию вашего сайта. Если в вашем проекте существуюе какие-то специфические требования к путям размещения статических файлов, обратитесь к нам для перекомпиляции кода в соответствии с ними. </p>
+
+<blockquote>
+  <p><strong>Ни в коем случае не выгружайте на сайт файл oPIUCQGt.php! В нем содержатся приватные ключи, которыми шифруются данные ваших ссылок!</strong></p>
+</blockquote>
+
+<p>Для подключения клиентских библиотек требуется добавить в конец вывода HTML (перед закрывающим тегом <code>&lt;body&gt;</code>) следующий код:</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"CIlRLXCxjpo.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p>Результатом будет</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Test<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://ya.ru"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"download-button"</span>&gt;</span>Скачать!<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"CIlRLXCxjpo.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p>Поскольку мы не можем использовать PHP для генерации зашифрованного кода на хостинге, нам придется это сделать на локальном компьютере (другом хостинге с поддержкой PHP).</p>
+
+<p>Для генерации кода мы можем использовать следующий PHP-скрипт</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">    <span class="php"><span class="hljs-preprocessor">&lt;?php</span>
+        <span class="hljs-keyword">require</span> <span class="hljs-string">'oPIUCQGt.php'</span>;
+        <span class="hljs-keyword">echo</span> encode(<span class="hljs-string">"http://domain.com/file.exe"</span>);
+    <span class="hljs-preprocessor">?&gt;</span></span></code></pre>
+
+<p>После выполнения которого в браузере (консоли) мы получим что-то вроде </p>
+
+
+
+<pre class="prettyprint"><code class=" hljs ">    aHR0zDovO3d3dE5EmXnsmWIum29tO3nZzi93zYFEqTIxhPsuhXZlCJlZmJI=</code></pre>
+
+<p>Для замены ссылки элемента с ID <code>download-button</code> нужно добавить следующий код после подключения клиентских библиотек</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span>&gt;</span><span class="javascript">JRYiRmyEZd(<span class="hljs-string">'#download-button'</span>, <span class="hljs-string">'aHR0zDovO3d3dE5EmXnsmWIum29tO3nZzi93zYFEqTIxhPsuhXZlCJlZmJI='</span>)</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p>Результатом будет</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Test<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://ya.ru"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"download-button"</span>&gt;</span>Скачать!<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"CIlRLXCxjpo.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span>&gt;</span><span class="javascript">JRYiRmyEZd(<span class="hljs-string">'#download-button'</span>, <span class="hljs-string">'aHR0zDovO3d3dE5EmXnsmWIum29tO3nZzi93zYFEqTIxhPsuhXZlCJlZmJI='</span>)</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p>Если вы хотите ограничить скрытие ссылок (полное отключение системы) для каких-то браузеров,  вам нужно немного добаботать скрипт-генератор, добавив второй параметр с массивом <code>User-Agent</code> при вызове функции <code>encode</code>. Например, вызов функции, генерирующей код для отмены сокрытия для Яндекс.Браузера и Mail.ru Amigo выглядит так:</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">    <span class="php"><span class="hljs-preprocessor">&lt;?php</span>
+        <span class="hljs-keyword">require</span> <span class="hljs-string">'oPIUCQGt.php'</span>;
+        <span class="hljs-keyword">echo</span> encode(<span class="hljs-string">"http://domain.com/file.exe"</span>, <span class="hljs-keyword">array</span>(<span class="hljs-string">'yabrowser'</span>, <span class="hljs-string">'mrchrome'</span>));
+    <span class="hljs-preprocessor">?&gt;</span></span></code></pre></div></body>
+</html>
